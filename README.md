@@ -16,7 +16,7 @@ We also use Jinja2 templates for replacing variables.
 
 ## How should I use this?
 
-The intent behind this project is that you ca clone it then repurpose it to your needs. What makes this most useful is that it comes with a Certbot + Envoy setup which provisions SSL certificates, you just need to give it the right configurations.
+The intent behind this project is that you can clone it then repurpose it to your needs. What makes this most useful is that it comes with a Certbot + Envoy setup which provisions SSL certificates, you just need to give it the right configurations.
 
 With this, you can set this up to provision certificates for most use-cases. This setup only works with the HTTP-01 challenge, so you won't be able to provision wildcard certificates.
 
