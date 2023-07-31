@@ -54,6 +54,8 @@ The setup below presumes you already have your DNS records pointing to the endpo
 
 This template offers an efficient way to set up Envoy with SSL, backed by Certbot for automatic renewals. Feel free to use this as a base for your projects and contribute any improvements or suggestions you may have.
 
----
+## Special Thanks 🌟
 
-Happy coding and stay secure! 🚀
+Shoutout and gratitude to Jonasal for their invaluable [Nginx-Certbot](https://github.com/JonasAlfredsson/docker-nginx-certbot) Docker image. Their dedication to providing and maintaining such a crucial tool has significantly simplified the process of certificate management for many developers, including us. This project wouldn't be as seamless without their contribution. We encourage everyone to check out and support their work.
+
+Thank you, Jonasal, for your dedication and for contributing to the open-source community!
