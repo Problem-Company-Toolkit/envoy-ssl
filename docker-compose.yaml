@@ -1,0 +1,40 @@
+version: '3.8'
+
+networks:
+  my-network:
+    name: my-network
+
+services:
+  proxy:
+    image: "${ENVIRONMENT}-proxy:${VERSION}"
+    networks:
+      - my-network
+    build:
+      context: proxy
+      dockerfile: Dockerfile
+    ports:
+      - ${HTTP_PROXY_PORT}:${HTTP_PROXY_PORT}
+      - ${HTTPS_PROXY_PORT}:${HTTPS_PROXY_PORT}
+    env_file:
+      - .env
+    volumes:
+      - ./certbot/nginx:/etc/nginx/templates
+      - ./certbot/letsencrypt:/etc/letsencrypt
+
+  certbot:
+    image: jonasal/nginx-certbot:4.2.0-nginx1.23.3
+    environment:
+      NGINX_ENVSUBST_TEMPLATE_SUFFIX: ".template"
+      CERTBOT_EMAIL: ${CERTBOT_EMAIL}
+      STAGING: ${CERTBOT_STAGING:-1}
+      DEBUG: ${CERTBOT_DEBUG:-1}
+      CERT_NAME: ${CERT_NAME}
+    env_file:
+      - .env
+    networks:
+      - my-network
+    volumes:
+      - ./certbot/nginx:/etc/nginx/templates
+      - ./certbot/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - proxy

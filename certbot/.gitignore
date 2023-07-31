@@ -1,0 +1,2 @@
+# Avoid pushing SSL certificates to version control.
+letsencrypt/**
