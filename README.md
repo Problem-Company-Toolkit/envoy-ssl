@@ -16,7 +16,7 @@ We also use Jinja2 templates for replacing variables.
 
 ## How should I use this?
 
-The intent behind this project is that you can repurpose this to your needs. What makes this most useful is that it comes with a Certbot + Envoy setup which provisions SSL certificates, you just need to give it the right configurations.
+The intent behind this project is that you ca clone it then repurpose it to your needs. What makes this most useful is that it comes with a Certbot + Envoy setup which provisions SSL certificates, you just need to give it the right configurations.
 
 With this, you can set this up to provision certificates for most use-cases. This setup only works with the HTTP-01 challenge, so you won't be able to provision wildcard certificates.
 
@@ -31,6 +31,8 @@ Ensure you have Docker and Docker-Compose installed on your system.
 We utilize a `.env` file for configuration settings.
 
 Check the `.env` file in this repository for an example and explanations of each of the values that are used by this setup.
+
+Values from the `.env` file are used to replace values in the Envoy configuration files, which use Jinja2.
 
 ### How to Use
 
