@@ -34,6 +34,8 @@ Check the `.env` file in this repository for an example and explanations of each
 
 Values from the `.env` file are used to replace values in the Envoy configuration files, which use Jinja2.
 
+Also, you can pass any configuration from [Jonas Alfredsson's Nginx-Certbot's documentation](https://github.com/JonasAlfredsson/docker-nginx-certbot) to the Certbot container, since it's the same image. So, you could use a local CA, toggle ECDSA, etc.
+
 ### How to Use
 
 The setup below presumes you already have your DNS records pointing to the endpoint you're provisioning the SSL certificates from. For instance, that you have already created an A record that points to the VPS where you're running this.
